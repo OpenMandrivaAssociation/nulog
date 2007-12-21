@@ -17,6 +17,7 @@ Requires(post):	ccp >= 0.4.0
 Requires:	ulogd-mysql
 Provides:	ulog-php = %{version} 
 Obsoletes:	ulog-php
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 Nulog is a firewall log analysis interface written in php. Netfilter and NuFW
