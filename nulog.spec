@@ -1,12 +1,12 @@
 Summary:	Nulog is a firewall log analysis interface written in php
 Name:		nulog
-Version:	1.1.8
+Version:	1.2.14
 Release:	%mkrel 1
 License:	GPL
 Group:		System/Servers
 URL:		http://www.inl.fr/Nulog.html
 Source0:	http://www.inl.fr/download/%{name}-%{version}.tar.bz2
-Patch0:		nulog-1.1.8-mdv_config.diff
+Patch0:		%{name}-%{version}-mdv_config.diff
 Requires(pre):	apache-mod_php apache-mod_ssl php-mysql
 Requires:	apache-mod_php apache-mod_ssl php-mysql
 BuildArch:	noarch
@@ -15,7 +15,7 @@ BuildRequires:	ImageMagick
 BuildRequires:	apache-base >= 2.0.54
 Requires(post):	ccp >= 0.4.0
 Requires:	ulogd-mysql
-Provides:	ulog-php = %{version} 
+Provides:	ulog-php = %{version}
 Obsoletes:	ulog-php
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
@@ -28,7 +28,7 @@ on a user-friendly interface.
 %prep
 
 %setup -q
-%patch0 -p1
+%patch0 -p0
 
 # clean up CVS stuff
 for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type f -name .#\*`; do
@@ -66,7 +66,7 @@ pushd %{buildroot}/var/www/%{name}
 popd
 
 # fix config file location
-mv %{buildroot}/var/www/%{name}/include/config.php %{buildroot}%{_sysconfdir}/%{name}/config.php
+mv %{buildroot}/var/www/%{name}/include/config.template.php %{buildroot}%{_sysconfdir}/%{name}/config.php
 
 # fix scrips location
 mv %{buildroot}/var/www/%{name}/scripts/* %{buildroot}%{_datadir}/%{name}/
