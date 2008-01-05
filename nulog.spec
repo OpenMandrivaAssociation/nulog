@@ -138,7 +138,8 @@ section="System/Monitoring" \
 title="Nulog" \
 longtitle="Nulog is a firewall log analysis interface written in php.  Set the $BROWSER environment variable to choose your preferred browser." \
 command="%{_libdir}/%{name}/scripts/%{name} 1>/dev/null 2>/dev/null" \
-icon="%{name}.png"
+icon="%{name}.png" \
+xdg="true"
 EOF
 
 %post
