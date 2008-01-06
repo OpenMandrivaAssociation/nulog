@@ -131,15 +131,15 @@ convert images/nupik.png -resize 32x32 %{buildroot}%{_iconsdir}/%{name}.png
 convert images/nupik.png -resize 48x48 %{buildroot}%{_liconsdir}/%{name}.png
 
 # install menu entry.
-install -d %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} << EOF
-?package(%{name}): needs=X11 \
-section="System/Monitoring" \
-title="Nulog" \
-longtitle="Nulog is a firewall log analysis interface written in php.  Set the $BROWSER environment variable to choose your preferred browser." \
-command="%{_libdir}/%{name}/scripts/%{name} 1>/dev/null 2>/dev/null" \
-icon="%{name}.png" \
-xdg="true"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Categories=System;Monitor;
+Name=Nulog
+Comment=Nulog is a firewall log analysis interface written in php.  Set the $BROWSER environment variable to choose your preferred browser.
+Exec=%{_libdir}/%{name}/scripts/%{name} 1>/dev/null 2>/dev/null
+Icon=%{name}xdg="true"
 EOF
 
 %post
@@ -164,7 +164,7 @@ ccp --delete --ifexists --set "NoOrphans" --ignoreopt config_version --oldfile %
 %attr(0755,root,root) %{_libdir}/%{name}/scripts/%{name}
 %dir %attr(0755,root,root) %{_datadir}/%{name}
 %{_datadir}/%{name}/*
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
