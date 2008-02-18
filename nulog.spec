@@ -1,4 +1,4 @@
-Summary:	Nulog is a firewall log analysis interface written in php
+Summary:	Firewall log analysis interface written in php
 Name:		nulog
 Version:	1.2.14
 Release:	%mkrel 1
