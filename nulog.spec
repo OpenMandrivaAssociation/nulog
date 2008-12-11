@@ -11,7 +11,7 @@ Requires(pre):	apache-mod_php apache-mod_ssl php-mysql
 Requires:	apache-mod_php apache-mod_ssl php-mysql
 BuildArch:	noarch
 BuildRequires:	dos2unix
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 BuildRequires:	apache-base >= 2.0.54
 Requires(post):	ccp >= 0.4.0
 Requires:	ulogd-mysql
