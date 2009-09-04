@@ -1,7 +1,7 @@
 Summary:	Firewall log analysis interface written in php
 Name:		nulog
 Version:	1.2.14
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPL
 Group:		System/Servers
 URL:		http://www.inl.fr/Nulog.html
