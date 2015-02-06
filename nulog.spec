@@ -1,7 +1,7 @@
 Summary:	Firewall log analysis interface written in python
 Name:		nulog
 Version:	2.1.5
-Release:	3
+Release:	4
 License:	GPL
 Group:		System/Servers
 URL:		http://www.inl.fr/Nulog.html
