@@ -4,7 +4,7 @@ Version:	2.1.5
 Release:	4
 License:	GPL
 Group:		System/Servers
-URL:		http://www.inl.fr/Nulog.html
+URL:		https://www.inl.fr/Nulog.html
 Source0:	http://www.inl.fr/download/%{name}-%{version}.tar.bz2
 Source1:	nulog
 Requires(post): rpm-helper
