@@ -9,6 +9,7 @@ Source0:	http://www.inl.fr/download/%{name}-%{version}.tar.bz2
 Source1:	nulog
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+BuildRequires:	make
 BuildRequires:	python-devel
 BuildRequires:	python-docutils
 BuildRequires:	gettext
